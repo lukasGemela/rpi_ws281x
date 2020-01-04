@@ -278,7 +278,9 @@ int mbox_open(void) {
     }
     file_desc = open(filename, 0);
     if (file_desc < 0) {
-        perror(errno);
+        char str[50];
+        sprintf(str, "%d", errno);
+        perror(str);
         perror("Can't open device file\n");
         unlink(filename);
         return -1;
