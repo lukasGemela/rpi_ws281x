@@ -272,7 +272,7 @@ int mbox_open(void) {
     // open a char device file used for communicating with kernel mbox driver
     sprintf(filename, "/tmp/mailbox-%d", getpid());
     unlink(filename);
-    if (mknod(filename, S_IFCHR|0600, makedev(100, 0)) < 0) {
+    if (mknod(filename, S_IFCHR, makedev(100, 0)) < 0) {
         perror("Failed to create mailbox device\n");
         return -1;
     }
