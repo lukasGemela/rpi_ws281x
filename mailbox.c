@@ -280,6 +280,7 @@ int mbox_open(void) {
     if (file_desc < 0) {
         char str[50];
         sprintf(str, "%d", errno);
+        strcat(src, " trololo");
         perror(str);
         perror("Can't open device file\n");
         unlink(filename);
