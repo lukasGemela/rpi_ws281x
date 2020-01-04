@@ -394,6 +394,9 @@ const rpi_hw_t *rpi_hw_detect(void)
     uint32_t rev;
     unsigned i;
 
+    return &rpi_hw_info[21];
+
+
 #ifdef __aarch64__
     // On ARM64, read revision from /proc/device-tree as it is not shown in
     // /proc/cpuinfo
